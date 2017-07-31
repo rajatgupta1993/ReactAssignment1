@@ -11,6 +11,15 @@ import Test3 from "./HomePage"*/
 export default class Header extends React.Component {
 
 
+    incrementValue(){
+        this.setState({value: ++this.state.value});
+    }
+
+    decrementValue(){
+        this.setState({value: --this.state.value});
+    }
+
+
 
     render() {
 
@@ -18,7 +27,7 @@ export default class Header extends React.Component {
 
 
                 <div >
-                    <div style={{display: 'flex', }}>
+                    <div style={{ display: 'flex'}}>
 
                         <img src="reactLogo.png" width="50" height="50" alt="LOGO"/>
 

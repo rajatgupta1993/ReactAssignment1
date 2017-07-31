@@ -9,34 +9,23 @@ export default class IncrementDecrement extends React.Component {
         super(props)
 
         this.state={
-            value:0
+            value:this.props.value
         }
-
-        this.incrementValue=this.incrementValue.bind(this);
-        this.decrementValue=this.decrementValue.bind(this);
     }
-
-    incrementValue(){
-        this.setState({value: ++this.state.value});
-    }
-
-    decrementValue(){
-        this.setState({value: --this.state.value});
-    }
-
 
     render() {
+
         return (
             <div style={{display: 'block',background: '#fff',padding:10 ,width:'100%' , height:'100%'}}>
 
-            <p style={{ marginLeft: '25px', fontSize:'20px'}}> {this.state.value}</p>
+            <p style={{ marginLeft: '25px', fontSize:'20px'}}> {this.props.value}</p>
 
             <div style={{display: 'flex' }}>
                   <img src="add.png" width="20" height="20" alt="increment"
-                       onClick={this.incrementValue}/>
+                       onClick={this.props.onIncrement}/>
 
                   <img style={{marginLeft:'20px'}} src="subtract.png" width="20" height="20" alt="decrement"
-                  onClick={this.decrementValue}/>
+                  onClick={this.props.onDecrement}/>
             </div>
             </div>
 

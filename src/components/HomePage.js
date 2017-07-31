@@ -2,8 +2,8 @@
  * Created by RAGU on 28-07-2017.
  */
 import React from "react"
-import { Link, Route } from 'react-router-dom'
-import IncrementDecrement from './IncrementDecrement'
+import { Link,} from 'react-router-dom'
+
 
 export default class HomePage extends React.Component {
 

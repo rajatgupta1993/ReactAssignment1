@@ -10,6 +10,23 @@ import IncrementDecrement from './IncrementDecrement'
 
 export default class Body extends React.Component {
 
+    constructor(props) {
+        super(props)
+
+        this.state={
+            value:2
+        }
+
+        this.incrementValue=this.incrementValue.bind(this);
+        this.decrementValue=this.decrementValue.bind(this);
+    }
+
+    incrementValue(){
+        this.setState({value: ++this.state.value});
+    }
+    decrementValue(){
+        this.setState({value: --this.state.value});
+    }
 
     render() {
 
@@ -19,10 +36,10 @@ export default class Body extends React.Component {
                     <Route exact path="/" component={HomePage } />
                     <Route path="/contacts" component={ContactsPage} />
                     <Route path="/about" component={AboutPage} />
-                    <Route path="/increment" component={IncrementDecrement} />
+
+                    <Route path="/increment" render={()=><IncrementDecrement value={this.state.value} onIncrement={this.incrementValue} onDecrement={this.decrementValue} />}/>
 
                 </div>
-
         );
     }
 }
