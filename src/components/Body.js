@@ -7,27 +7,26 @@ import ContactsPage from "./ContactsPage"
 import AboutPage from "./AboutPage"
 import HomePage from "./HomePage"
 import IncrementDecrement from './IncrementDecrement'
+import IncrementDecrementContainer from '../containers/IncrementDecrementContainer'
 
 export default class Body extends React.Component {
 
     constructor(props) {
         super(props)
 
-        this.state={
-            value:2
-        }
 
-        this.incrementValue=this.incrementValue.bind(this);
-        this.decrementValue=this.decrementValue.bind(this);
+
+       /* this.incrementValue=this.incrementValue.bind(this);
+        this.decrementValue=this.decrementValue.bind(this);*/
     }
 
-    incrementValue(){
+   /* incrementValue(){
         this.setState({value: ++this.state.value});
     }
     decrementValue(){
         this.setState({value: --this.state.value});
     }
-
+*/
     render() {
 
         return (
@@ -37,7 +36,7 @@ export default class Body extends React.Component {
                     <Route path="/contacts" component={ContactsPage} />
                     <Route path="/about" component={AboutPage} />
 
-                    <Route path="/increment" render={()=><IncrementDecrement value={this.state.value} onIncrement={this.incrementValue} onDecrement={this.decrementValue} />}/>
+                    <Route path="/increment" render={()=><IncrementDecrementContainer  />}/>
 
                 </div>
         );
